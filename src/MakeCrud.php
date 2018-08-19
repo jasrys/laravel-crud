@@ -50,7 +50,7 @@ class MakeCrud extends Command
 
     protected function createModel($modelName, $attributes)
     {
-        $stub = file_get_contents(app_path('Crud/model.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/model.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -65,7 +65,7 @@ class MakeCrud extends Command
 
     protected function createController($modelName)
     {
-        $stub = file_get_contents(app_path('Crud/controller.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/controller.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -87,7 +87,7 @@ class MakeCrud extends Command
 
     protected function createViewingModelTest($modelName)
     {
-        $stub = file_get_contents(app_path('Crud/viewing_test.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/viewing_test.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -99,7 +99,7 @@ class MakeCrud extends Command
 
     protected function createCreatingModelTest($modelName)
     {
-        $stub = file_get_contents(app_path('Crud/creating_test.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/creating_test.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -111,7 +111,7 @@ class MakeCrud extends Command
 
     protected function createEditingModelTest($modelName)
     {
-        $stub = file_get_contents(app_path('Crud/editing_test.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/editing_test.stub'));
 
         $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -123,7 +123,7 @@ class MakeCrud extends Command
 
     protected function createDeletingModelTest($modelName)
     {
-        $stub = file_get_contents(app_path('Crud/deleting_test.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/deleting_test.stub'));
 
         $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -155,7 +155,7 @@ class MakeCrud extends Command
 
     protected function createModelFactory($modelName, $attributes)
     {
-        $stub = file_get_contents(app_path('Crud/factory.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/factory.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -170,7 +170,7 @@ class MakeCrud extends Command
 
     protected function createMigration($modelName, $attributes)
     {
-        $stub = file_get_contents(app_path('Crud/migration.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/migration.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -212,7 +212,7 @@ class MakeCrud extends Command
 
     protected function createCreateView($modelName)
     {
-        $stub = file_get_contents(app_path('Crud/create_view.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/create_view.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -221,7 +221,7 @@ class MakeCrud extends Command
 
     protected function createEditView($modelName)
     {
-        $stub = file_get_contents(app_path('Crud/edit_view.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/edit_view.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -230,7 +230,7 @@ class MakeCrud extends Command
 
     protected function createShowView($modelName)
     {
-        $stub = file_get_contents(app_path('Crud/show_view.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/show_view.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -239,7 +239,7 @@ class MakeCrud extends Command
 
     protected function createIndexView($modelName)
     {
-        $stub = file_get_contents(app_path('Crud/index_view.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/index_view.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -248,7 +248,7 @@ class MakeCrud extends Command
 
     protected function createFormView($modelName, $attributes)
     {
-        $stub = file_get_contents(app_path('Crud/form_view.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/form_view.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
@@ -268,7 +268,7 @@ class MakeCrud extends Command
 
     protected function createModelView($modelName, $attributes)
     {
-        $stub = file_get_contents(app_path('Crud/model_view.stub'));
+        $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/model_view.stub'));
 
         $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
