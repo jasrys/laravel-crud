@@ -3,7 +3,6 @@
 namespace Jasrys\Crud;
 
 use Illuminate\Support\ServiceProvider;
-use App\Console\Commands\MakeCrud;
 
 class CrudServiceProvider extends ServiceProvider
 {
