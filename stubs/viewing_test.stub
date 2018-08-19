@@ -1,0 +1,53 @@
+<?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\MODEL_NAME;
+use App\User;
+
+class ViewingMODEL_NAME_PLURALTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /** @test */
+    public function guests_cannot_view_the_index_page()
+    {
+        $this->get('MODEL_NAME_PLURAL_LOWERCASE')->assertRedirect('/login');
+    }
+
+    /** @test */
+    public function logged_in_users_can_view_the_index_page()
+    {
+        $this->be(factory(User::class)->create());
+
+        $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
+
+        $this->get('MODEL_NAME_PLURAL_LOWERCASE')
+            ->assertStatus(200)
+            ->assertViewIs('MODEL_NAME_PLURAL_LOWERCASE.index');
+    }
+
+    /** @test */
+    public function guests_cannot_view_the_show_page()
+    {
+        auth()->logout();
+
+        $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
+
+        $this->get("MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME->id}")->assertRedirect('/login');
+    }
+
+    /** @test */
+    public function logged_in_users_can_view_the_show_page()
+    {
+        $this->be(factory(User::class)->create());
+
+        $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
+
+        $this->get("MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}")
+            ->assertStatus(200)
+            ->assertViewIs('MODEL_NAME_PLURAL_LOWERCASE.show');
+    }
+}

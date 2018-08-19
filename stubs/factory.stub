@@ -1,0 +1,10 @@
+<?php
+
+use Faker\Generator as Faker;
+use App\MODEL_NAME;
+
+$factory->define(MODEL_NAME::class, function (Faker $faker) {
+    return [
+        ATTRIBUTES
+    ];
+});

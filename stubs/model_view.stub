@@ -1,0 +1,25 @@
+<div class="flex justify-between">
+
+ATTRIBUTES
+    <div>
+        <div>
+            <button class="btn btn-sm btn-default">
+                <a href="{{ url("MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}/edit") }}">
+                    Edit
+                </a>
+            </button>
+
+            <form
+                action="{{ url("MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}") }}"
+                method="POST"
+            >
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+
+                <button class="btn btn-sm btn-default">
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

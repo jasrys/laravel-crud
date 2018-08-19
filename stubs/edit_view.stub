@@ -1,0 +1,12 @@
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container">
+    @include('MODEL_NAME_PLURAL_LOWERCASE.partials.form', [
+        'method' => 'PATCH',
+        'action' => "MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}",
+    ])
+</div>
+
+@endsection

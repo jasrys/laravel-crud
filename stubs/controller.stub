@@ -1,0 +1,90 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\MODEL_NAME;
+
+class MODEL_NAMEController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $MODEL_NAME_PLURAL_LOWERCASE = MODEL_NAME::all();
+
+        return view('MODEL_NAME_PLURAL_LOWERCASE.index', compact('MODEL_NAME_PLURAL_LOWERCASE'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('MODEL_NAME_PLURAL_LOWERCASE.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store()
+    {
+        $MODEL_NAME_LOWERCASE = MODEL_NAME::create(request()->input());
+
+        return redirect("/MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}");
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\MODEL_NAME  $MODEL_NAME_LOWERCASE
+     * @return \Illuminate\Http\Response
+     */
+    public function show(MODEL_NAME $MODEL_NAME_LOWERCASE)
+    {
+        return view('MODEL_NAME_PLURAL_LOWERCASE.show', compact('MODEL_NAME_LOWERCASE'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\MODEL_NAME  $MODEL_NAME_LOWERCASE
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(MODEL_NAME $MODEL_NAME_LOWERCASE)
+    {
+        return view('MODEL_NAME_PLURAL_LOWERCASE.edit', compact('MODEL_NAME_LOWERCASE'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\MODEL_NAME  $MODEL_NAME_LOWERCASE
+     * @return \Illuminate\Http\Response
+     */
+    public function update(MODEL_NAME $MODEL_NAME_LOWERCASE)
+    {
+        $MODEL_NAME_LOWERCASE->update(request()->input());
+
+        return view('MODEL_NAME_PLURAL_LOWERCASE.show', compact('MODEL_NAME_LOWERCASE'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\MODEL_NAME  $MODEL_NAME_LOWERCASE
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(MODEL_NAME $MODEL_NAME_LOWERCASE)
+    {
+        $MODEL_NAME_LOWERCASE->delete();
+
+        return redirect('MODEL_NAME_PLURAL_LOWERCASE');
+    }
+}

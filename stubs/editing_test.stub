@@ -1,0 +1,54 @@
+<?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\MODEL_NAME;
+use App\User;
+
+class EditingMODEL_NAME_PLURALTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /** @test */
+    public function guests_cannot_view_the_edit_page()
+    {
+        $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
+
+        $this->get("/MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}/edit")->assertRedirect('/login');
+    }
+
+    /** @test */
+    public function logged_in_users_can_view_the_edit_page()
+    {
+        $this->be(factory(User::class)->create());
+
+        $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
+
+        $this->get("/MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}/edit")
+            ->assertStatus(200)
+            ->assertViewIs('MODEL_NAME_PLURAL_LOWERCASE.edit');
+    }
+
+    /** @test */
+    public function guests_cannot_update_a_MODEL_NAME_LOWERCASE()
+    {
+        $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
+
+        $this->patch("/MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}", $MODEL_NAME_LOWERCASE->toArray())
+            ->assertRedirect('/login');
+    }
+
+    /** @test */
+    public function logged_in_users_can_update_a_MODEL_NAME_LOWERCASE()
+    {
+        $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
+
+        $MODEL_NAME->name = 'Updated';
+
+        $this->patch("/MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}", $MODEL_NAME_LOWERCASE->toArray());
+
+        $this->assertDatabaseHas('MODEL_NAME_PLURAL_LOWERCASE', $MODEL_NAME_LOWERCASE->toArray());
+    }
+}

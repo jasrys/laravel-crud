@@ -1,0 +1,9 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        @foreach ($MODEL_NAME_PLURAL_LOWERCASE as $MODEL_NAME_LOWERCASE)
+            @include('MODEL_NAME_PLURAL_LOWERCASE.partials.MODEL_NAME_LOWERCASE')
+        @endforeach
+    </div>
+@endsection
