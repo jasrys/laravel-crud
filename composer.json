@@ -17,5 +17,12 @@
         "psr-4": {
             "Jasrys\\Crud\\Test\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jasrys\\Crud\\CrudServiceProvider"
+            ]
+        }
     }
 }
