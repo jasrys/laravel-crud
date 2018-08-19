@@ -1,6 +1,6 @@
 {
     "name": "jasrys/laravel-crud",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Laravel CRUD generator",
     "require-dev": {
         "orchestra/testbench": "^3.6",
@@ -13,6 +13,11 @@
             "email": "jasonrys@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Jasrys\\Crud\\": "src"
+        }
+    },
     "autoload-dev": {
         "psr-4": {
             "Jasrys\\Crud\\Test\\": "tests/"
