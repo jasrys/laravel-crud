@@ -13,6 +13,11 @@
             "email": "jasonrys@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Jasrys\\Crud\\": "src"
+        }
+    },
     "autoload-dev": {
         "psr-4": {
             "Jasrys\\Crud\\Test\\": "tests/"
