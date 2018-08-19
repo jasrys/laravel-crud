@@ -1,0 +1,33 @@
+<?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\MODEL_NAME;
+use App\User;
+
+class DeletingMODEL_NAME_PLURALTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /** @test */
+    public function guests_cannot_delete_a_MODEL_NAME_LOWERCASE()
+    {
+        $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
+
+        $this->delete("/MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}")->assertRedirect('/login');
+    }
+
+    /** @test */
+    public function logged_in_users_can_delete_a_MODEL_NAME_LOWERCASE()
+    {
+        $this->be(factory(User::class)->create());
+
+        $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
+
+        $this->delete("/MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}");
+
+        $this->assertDatabaseMissing('MODEL_NAME_PLURAL_LOWERCASE', $MODEL_NAME_LOWERCASE->toArray());
+    }
+}

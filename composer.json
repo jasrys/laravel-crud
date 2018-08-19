@@ -1,0 +1,21 @@
+{
+    "name": "jasrys/laravel-crud",
+    "version": "0.1.0",
+    "description": "Laravel CRUD generator",
+    "require-dev": {
+        "orchestra/testbench": "^3.6",
+        "phpunit/phpunit": "^7.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jason Rys",
+            "email": "jasonrys@gmail.com"
+        }
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "Jasrys\\Crud\\Test\\": "tests/"
+        }
+    }
+}
