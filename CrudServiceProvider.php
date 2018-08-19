@@ -5,7 +5,7 @@ namespace Jasrys\Crud;
 use Illuminate\Support\ServiceProvider;
 use App\Console\Commands\MakeCrud;
 
-class MyPackageServiceProvider extends ServiceProvider
+class CrudServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
