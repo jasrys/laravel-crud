@@ -11,5 +11,10 @@
             "name": "Jason Rys",
             "email": "jasonrys@gmail.com"
         }
-    ]
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "Jasrys\\Crud\\Test\\": "tests/"
+        }
+    }
 }
