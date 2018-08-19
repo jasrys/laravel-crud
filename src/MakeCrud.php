@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Jasrys\Crud;
 
 use Illuminate\Console\Command;
 
