@@ -2,7 +2,7 @@
 
 ATTRIBUTES
     <div>
-        <div>
+        <div class="flex">
             <button class="btn btn-sm btn-default">
                 <a href="{{ url("MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}/edit") }}">
                     Edit
@@ -16,7 +16,7 @@ ATTRIBUTES
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
 
-                <button class="btn btn-sm btn-default">
+                <button class="btn btn-sm btn-default text-blue hover:text-red hover:underline">
                     Delete
                 </button>
             </form>
