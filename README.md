@@ -1,13 +1,13 @@
 # laravel-crud
 CRUD generator package for Laravel
 
-## Why is this better than all the other Laravel CRUD generators?
+## Why yet another CRUD generator?
 
 I needed a package to quickly whip up simple models, resource controllers, migrations, feature tests, factories, routes, and views quickly, and none of the other packages I found fit the way I prefer to structure my projects. 
 
 ## Installation
 
-Run `composer require jasrys/laravel-crud`. The `CrudServiceProvider` will be auto-discovered if your version of Laravel supports it. Otherwise, add a reference to `\Jasrys\Crud\CrudServiceProvider::class` in the `providers` array of your `config/app.php` file.
+Run `composer require jasrys/laravel-crud`. The `CrudServiceProvider` will be auto-discovered if your version of Laravel supports it. Otherwise, add a reference to `Jasrys\Crud\CrudServiceProvider::class` in the `providers` array of your `config/app.php` file.
 
 ## Creating CRUD Models
 
