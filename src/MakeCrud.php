@@ -254,7 +254,7 @@ class MakeCrud extends Command
 
         $formattedAttributes = $attributes->map(function ($attribute) use ($modelName) {
             return "\t" . '<div>' . PHP_EOL
-                . "\t\t" . '<label for="' . $attribute . '">' . ucfirst($attribute) . '</label>'
+                . "\t\t" . '<label for="' . $attribute . '">' . ucfirst(str_replace('_', ' ', $attribute)) . '</label>'
                 . PHP_EOL
                 . "\t\t" . '<input type="text" name="' . $attribute . '" class="form-control" value="{{ $' . strtolower($modelName) . "->{$attribute} ?? '' }}" . '" />'
                 . PHP_EOL . "\t" . '</div>'
