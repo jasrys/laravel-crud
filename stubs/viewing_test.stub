@@ -36,7 +36,7 @@ class ViewingMODEL_NAME_PLURALTest extends TestCase
 
         $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
 
-        $this->get("MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME->id}")->assertRedirect('/login');
+        $this->get("MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}")->assertRedirect('/login');
     }
 
     /** @test */
