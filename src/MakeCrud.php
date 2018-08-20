@@ -113,7 +113,7 @@ class MakeCrud extends Command
     {
         $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/editing_test.stub'));
 
-        $this->replacePlaceholdersWithModelName($stub, $modelName);
+        $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
         file_put_contents(
             base_path('tests/Feature/' . str_plural(strtolower($modelName)) . '/Editing' . str_plural($modelName) . 'Test.php'),
@@ -125,7 +125,7 @@ class MakeCrud extends Command
     {
         $stub = file_get_contents(base_path('vendor/jasrys/laravel-crud/stubs/deleting_test.stub'));
 
-        $this->replacePlaceholdersWithModelName($stub, $modelName);
+        $stub = $this->replacePlaceholdersWithModelName($stub, $modelName);
 
         file_put_contents(
             base_path('tests/Feature/' . str_plural(strtolower($modelName)) . '/Deleting' . str_plural($modelName) . 'Test.php'),
