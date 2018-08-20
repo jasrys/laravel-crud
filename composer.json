@@ -1,6 +1,6 @@
 {
     "name": "jasrys/laravel-crud",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Laravel CRUD generator",
     "require-dev": {
         "orchestra/testbench": "^3.6",
