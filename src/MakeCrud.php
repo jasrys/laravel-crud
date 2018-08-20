@@ -11,7 +11,7 @@ class MakeCrud extends Command
      *
      * @var string
      */
-    protected $signature = 'crud:make {model} {--attributes=}';
+    protected $signature = 'make:crud {model} {--attributes=}';
 
     /**
      * The console command description.
