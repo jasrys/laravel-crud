@@ -45,7 +45,7 @@ class EditingMODEL_NAME_PLURALTest extends TestCase
     {
         $MODEL_NAME_LOWERCASE = factory(MODEL_NAME::class)->create();
 
-        $MODEL_NAME->name = 'Updated';
+        $MODEL_NAME_LOWERCASE->name = 'Updated';
 
         $this->patch("/MODEL_NAME_PLURAL_LOWERCASE/{$MODEL_NAME_LOWERCASE->id}", $MODEL_NAME_LOWERCASE->toArray());
 
